@@ -75,7 +75,7 @@ for name, model in models:
 	results.append(cv_results)
 	names.append(name)
 	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
-	print(msg)
+	#print(msg)
 
 
 # Compare Algorithms
@@ -91,12 +91,12 @@ ax.set_xticklabels(names)
 print()
 print()
 print()
-knn = KNeighborsClassifier()
-knn.fit(X_train, Y_train)
-predictions = knn.predict(X_validation)
-print(accuracy_score(Y_validation, predictions))
+SVM = SVC(gamma='auto')
+SVM.fit(X_train, Y_train)
+predictions = SVM.predict(X_validation)
+#print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
-print(classification_report(Y_validation, predictions))
+#print(classification_report(Y_validation, predictions))
 
 
 
