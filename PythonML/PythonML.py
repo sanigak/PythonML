@@ -94,8 +94,20 @@ print()
 SVM = SVC(gamma='auto')
 SVM.fit(X_train, Y_train)
 predictions = SVM.predict(X_validation)
+
+
+
+iterator = 0
+#Predictions vs. true values
+for item in predictions:
+    print(item)
+    print(Y_validation[iterator])
+    print()
+    print()
+    iterator +=1
+
 #print(accuracy_score(Y_validation, predictions))
-print(confusion_matrix(Y_validation, predictions))
+#print(confusion_matrix(Y_validation, predictions))
 #print(classification_report(Y_validation, predictions))
 
 
